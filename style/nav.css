@@ -1,0 +1,36 @@
+
+@media (min-width: 992px){
+    ul{
+        margin-left:35em;
+    }
+    ul li{
+        margin-left:.6em;
+    }
+    
+}
+#playing{
+    height: 420px;
+    background-color: grey;
+    width:100%;
+
+}
+#logo{
+    color:red;
+    font-size: 2em;
+
+}
+a .navbar-brand{
+    margin-top:1em;
+
+}
+input[type=text]{
+    background: none;
+    
+}
+#responsive{
+    width:100%;
+}
+#other{
+    height: calc(78vh - 110px);
+    overflow-y: scroll;
+  }

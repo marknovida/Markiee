@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/nav.css">
+    <link id="logo-title" rel="shortcut icon" href="logo.png">
+    <script src="https://kit.fontawesome.com/8690cb7fb4.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Youtube Project</title>
+
+</head>
+<body class="bg-dark" style=" font-family: 'Yusei Magic', sans-serif;">
+    <div class="container">
+       <!--Navigation-->
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark ">
+            <i id="logo" class="fab fa-youtube"></i> <a class="navbar-brand" href="#">YouTube Project</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavDropdown" aria-controls="NavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="NavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" id="user-profile-name" style="cursor:pointer;"><i class="fas fa-user-circle"></i> Sign Up</a>
+                </li>
+                <li class="nav-item d-block">
+                  <form  class="form-group " id="myform">
+                      <div class="input-group ">
+                      <input type="text" id="search" class="form-control" placeholder="Search" aria-label="Search">
+                      </div>
+                  </form>
+                </li>
+              </ul>     
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 text-light">
+                <div class="embed-responsive embed-responsive-16by9" id="playing">
+                       
+                </div>
+                <h6 id="title"></h6>
+                <span  id="camlogo"><i  id="channel" class="fas fa-video"></i></span><br>
+                <span id="description"></span><hr>
+           
+            </div>
+            <div class="col-md-5"style="height:420px">
+                 <div class="card-title text-light"> <h4><i style="color:red" class="fab fa-youtube"></i> Playlists <a href="#" style="float:right;"> <i  class="fas fa-chevron-down"></i></a> </h4> </div>
+                    <div class="overflow-auto text-light" id="other"></div>
+                    <h5 class="text-muted text-center d-block mt-5">Presented by &copy; Mark Cutie</h5>
+            </div>
+        </div> 
+    </div>
+
+
+    <!-- Bootstrap Script -->
+    <script src="https://kit.fontawesome.com/8690cb7fb4.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>      
+    <script type="module" src="controller.js"></script>
+    <script>
+        function callme(x,y,z,a,b){
+            const banner = document.querySelector("#playing");
+
+            const channelTitle = document.querySelector("#channel");
+
+            const descriptionContent = document.querySelector("#description");
+
+            const youtubeProfile = document.querySelector("#other");
+
+            const videoTitle = document.querySelector("#title");
+
+            banner.innerHTML = '';
+
+            banner.innerHTML = `<iframe class="embed-responsive-item" height="420" width="644" src="https://www.youtube.com/embed/${x}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `;
+
+            channelTitle.innerHTML = `<i sclass="fas fa-video"></i> ${y}`;
+
+            descriptionContent.innerHTML = z;
+
+            youtubeProfile.setAttribute("src", a);
+
+            videoTitle.innerHTML = b;
+        }
+
+
+        document.querySelector("#myform").addEventListener('submit', function(){
+            const otherVideos = document.querySelector("#other");
+            otherVideos.innerHTML = "";
+        })
+    </script>
+</body>
+</html>
